@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import time
+import datetime
 
 # ============================================
 # ページ設定
@@ -36,14 +37,17 @@ name = st.text_input("あなたの名前", "ゲスト")
 st.write(f"こんにちは、{name}さん！")
 
 # ボタン
-# st.subheader("ボタン")
-# if st.button("クリックしてください"):
-#     st.success("ボタンがクリックされました！")
+st.subheader("今日の日付")
+if st.button("クリックしてください"):
+    today = datetime.date.today()
+    st.success(f"今日は {today} です。")
 
 # チェックボックス
-# st.subheader("チェックボックス")
-# if st.checkbox("チェックを入れると追加コンテンツが表示されます"):
-#     st.info("これは隠れたコンテンツです！")
+st.subheader("チェックボックス")
+if st.checkbox("今日は宿題を済ませましたか？"):
+    st.info("素晴らしい！宿題を終えましたね。")
+else:
+    st.warning("宿題を終わらせましょう！")
 
 # スライダー
 # st.subheader("スライダー")
